@@ -18,7 +18,7 @@ export function FooterForm() {
       />
 
       <button
-        className=" ml-[-48px]  left-0 rounded-full bg-purple-500 h-[28px] w-[28px] "
+        className=" ml-[-48px]  left-0 rounded-full bg-standart_violet-500 h-[28px] w-[28px] "
         type="button"
       >
         <Image
