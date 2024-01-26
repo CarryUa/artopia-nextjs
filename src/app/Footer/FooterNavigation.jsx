@@ -1,7 +1,7 @@
 export function FooterNavigation() {
   return (
     <nav className="flex gap-[129px]">
-      <div className="flex flex-col gap-[22px]">
+      <div className="flex flex-col gap-[12px]">
         <p className=" font-semibold text-[20px] text-white">Artopia</p>
         <a className="text-[#777E90] text-[18px]" href="#">
           explore
@@ -13,7 +13,7 @@ export function FooterNavigation() {
           About
         </a>
       </div>
-      <div className="flex flex-col gap-[22px]">
+      <div className="flex flex-col gap-[12px]">
         <p className=" font-semibold text-[20px] text-white">My Account</p>
         <a className="text-[#777E90] text-[18px]" href="#">
           Profile
@@ -31,7 +31,7 @@ export function FooterNavigation() {
           Settings
         </a>
       </div>
-      <div className="flex flex-col gap-[22px]">
+      <div className="flex flex-col gap-[12px]">
         <p className=" font-semibold text-[20px] text-white">Resources</p>
         <a className="text-[#777E90] text-[18px]" href="#">
           Platform Status
@@ -46,7 +46,7 @@ export function FooterNavigation() {
           Newsletter
         </a>
       </div>
-      <div className="flex flex-col gap-[22px]">
+      <div className="flex flex-col gap-[12px]">
         <p className=" font-semibold text-[20px] text-white">Community</p>
         <a className="text-[#777E90] text-[18px]" href="#">
           Help Center

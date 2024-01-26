@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         standart_violet: {
-          500: "#772CD6",
+          500: "#A259FF",
         },
       },
     },

@@ -22,7 +22,15 @@ input {
   outline: none;
 }
 .H-a {
+  border-bottom: 0 solid #a259ff;
   font-size: 22px;
   font-weight: 600;
   color: white;
+}
+.H-a:hover {
+  transform: translateY(0%);
+  transition: all 0.3s;
+  transform: translateY(-5px);
+
+  border-bottom: 3px solid #a259ff;
 }
