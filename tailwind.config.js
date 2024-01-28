@@ -11,6 +11,9 @@ module.exports = {
         standart_violet: {
           500: "#A259FF",
         },
+        standart_grey: {
+          500: "#3B3B3B",
+        },
       },
     },
   },

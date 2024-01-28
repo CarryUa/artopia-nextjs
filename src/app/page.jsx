@@ -1,9 +1,5 @@
-import Image from "next/image";
+import MainPage from "@/components/MainPage/MainPage";
 
 export default function Home() {
-  return (
-    <main>
-      <h2 className="first-on-page text-white">Children</h2>
-    </main>
-  );
+  return <MainPage />;
 }
