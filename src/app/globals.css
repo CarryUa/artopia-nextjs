@@ -31,6 +31,5 @@ input {
   transform: translateY(0%);
   transition: all 0.3s;
   transform: translateY(-5px);
-
   border-bottom: 3px solid #a259ff;
 }
