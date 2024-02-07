@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import clsx from "clsx";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,9 +12,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const hiden = false;
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black`}>
+      <body className={clsx(`${inter.className} bg-black`, hiden && "hidden")}>
         <Header />
         {children}
         <Footer />
