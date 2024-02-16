@@ -1,6 +1,6 @@
 export default function HeaderNav() {
   return (
-    <nav className="flex gap-16">
+    <nav className=" flex gap-16">
       <a className="H-a" href="#">
         Discover
       </a>
