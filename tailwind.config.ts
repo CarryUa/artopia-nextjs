@@ -14,6 +14,7 @@ module.exports = {
           500: "#A259FF",
         },
         standart_grey: {
+          400: "#494949",
           500: "#3B3B3B",
         },
       },
