@@ -3,8 +3,10 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
-import TextInput from "../../common/ui/TextInput";
-import { AuthFormButton } from "../../common/ui/AuthFormButton";
+import { TextInput } from "common/ui/inputs/TextInput";
+import { AuthFormButton } from "common/ui/Buttons/AuthFormButton";
+// import { getDefaults } from "utils/zod";
+
 const registerSchema = z.object({
   fullName: z
     .string()
@@ -15,6 +17,7 @@ const registerSchema = z.object({
     .string()
     .min(6, "Your password must be at least 6 character")
     .default(""),
+  agreement: z.boolean().default(true),
 });
 
 type Form = z.infer<typeof registerSchema>;
@@ -26,11 +29,7 @@ export function RegisterForm() {
     reset,
     formState: { errors, isLoading },
   } = useForm<Form>({
-    defaultValues: {
-      fullName: "",
-      email: "",
-      password: "",
-    },
+    // defaultValues: getDefaults(registerSchema),
     resolver: zodResolver(registerSchema),
   });
 
@@ -42,7 +41,7 @@ export function RegisterForm() {
   return (
     <div className={"bg-white max-w-[426px] ml-16"}>
       <div className={"mb-10"}>
-        <h4 className={"text-black font-bold text-3xl"}>
+        <h4 className={"text-black text-center font-bold text-3xl"}>
           Register Individual Account!
         </h4>
         <p className={"text-[#8692A6] text-lg font-medium"}>
@@ -56,22 +55,25 @@ export function RegisterForm() {
             label={"Your Fullname*"}
             {...register("fullName")}
             placeholder={"Enter your full name"}
+            helperText={errors.fullName?.message ?? ""}
           />
           <TextInput
             type={"email"}
             {...register("email")}
             label={"Email address*"}
             placeholder={"Enter email address"}
+            helperText={errors.email?.message ?? ""}
           />
           <TextInput
             type={"password"}
             {...register("password")}
             label={"Create password*"}
             placeholder={"Enter new password"}
+            helperText={errors.password?.message ?? ""}
           />
           <div>
-            <label>
-              <input type="checkbox" />
+            <label className={"text-black"}>
+              <input type="checkbox" {...register("agreement")} />
               <span>I agree to terms & conditions</span>
             </label>
           </div>

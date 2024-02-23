@@ -8,7 +8,7 @@ import Lines from "./static/HecoDecorLines.svg";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden py-[74px]">
-      <div className="z-0 absolute bg-standart_violet-300 w-1/5 h-full top-0"></div>{" "}
+      <div className="z-0 absolute bg-standart_violet-300 w-1/5 h-full top-0"></div>
       {/* left purpule background */}
       <Image
         width={700}
