@@ -1,5 +1,13 @@
+"use client";
 import Hero from "components/MainPage/Hero";
+import { useState } from "react";
 
 export default function Home() {
-  return <Hero />;
+  const [m, setMessage] = useState<string>("");
+  return (
+    <>
+      <Hero />
+      <div></div>
+    </>
+  );
 }

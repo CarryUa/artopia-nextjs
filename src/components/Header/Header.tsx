@@ -15,7 +15,7 @@ export default function Header() {
     return;
 
   return (
-    <header className="w-[1310px] h-12 fixed mt-5 flex items-center justify-between">
+    <header className="w-[1310px] h-12 fixed z-50 mt-5 flex items-center justify-between">
       <h1 className=" font-bold text-[40px] text-white">Artopia</h1>
       <Navigation />
       <HeaderBtn />

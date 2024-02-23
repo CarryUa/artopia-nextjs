@@ -12,9 +12,9 @@ export default function Navigation() {
       <Link
         href={"/discover"}
         className={clsx(
-          "text-[22px] font-semibold hover:border-b border-standart_violet-500",
+          "text-[22px] font-semibold hover:border-b transition border-_violet-500",
           {
-            "text-standart_violet-500": pathname === "/discover",
+            "text-_violet-500": pathname === "/discover",
           }
         )}
       >
@@ -23,9 +23,9 @@ export default function Navigation() {
       <Link
         href={"/forum"}
         className={clsx(
-          "text-[22px] font-semibold hover:border-b border-standart_violet-500",
+          "text-[22px] font-semibold hover:border-b transition border-_violet-500",
           {
-            "text-standart_violet-500": pathname === "/forum",
+            "text-_violet-500": pathname === "/forum",
           }
         )}
       >
@@ -34,9 +34,9 @@ export default function Navigation() {
       <Link
         href={"/news"}
         className={clsx(
-          "text-[22px] font-semibold hover:border-b border-standart_violet-500",
+          "text-[22px] font-semibold hover:border-b transition border-_violet-500",
           {
-            "text-standart_violet-500": pathname === "/news",
+            "text-_violet-500": pathname === "/news",
           }
         )}
       >
@@ -45,9 +45,9 @@ export default function Navigation() {
       <Link
         href={"/blog"}
         className={clsx(
-          "text-[22px] font-semibold hover:border-b border-standart_violet-500",
+          "text-[22px] font-semibold hover:border-b transition border-_violet-500",
           {
-            "text-standart_violet-500": pathname === "/blog",
+            "text-_violet-500": pathname === "/blog",
           }
         )}
       >
