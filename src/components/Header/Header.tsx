@@ -1,14 +1,23 @@
 "use client";
-import HeaderBtn from "./HeaderBtn";
-import HeaderNav from "./HeaderNav";
+
 import { usePathname } from "next/navigation";
+import HeaderBtn from "./HeaderBtn";
+import Navigation from "./Navigation";
+
 export default function Header() {
-  const path = usePathname();
-  if (path.includes("/register") || path.includes("/login")) return;
+  const pathname = usePathname();
+
+  if (
+    pathname.includes("/login") ||
+    pathname.includes("/register") ||
+    pathname.includes("/verification")
+  )
+    return;
+
   return (
-    <header className="z-30 h-12 w-[1310px] fixed pt-5 flex items-center justify-between">
-      <h1 className=" font-bold font-size-40px text-white">Artopia</h1>
-      <HeaderNav />
+    <header className="w-[1310px] h-12 fixed z-50 mt-5 flex items-center justify-between">
+      <h1 className=" font-bold text-[40px] text-white">Artopia</h1>
+      <Navigation />
       <HeaderBtn />
     </header>
   );

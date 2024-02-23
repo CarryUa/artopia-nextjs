@@ -1,12 +1,14 @@
+"use client";
+
+import Link from "next/link";
+
 export default function HeaderBtn() {
   return (
-    <button
-      type="button"
-      className="z-0 w-52 h-16 bg-standart_violet-500 text-white "
+    <Link
+      href={"/register"}
+      className=" w-52 h-16 bg-_violet-500 flex justify-center items-center"
     >
-      <a className="z-10 w-52 h-16" href="../../app/register/page.jsx">
-        Sing In
-      </a>
-    </button>
+      <p>Sing in</p>
+    </Link>
   );
 }

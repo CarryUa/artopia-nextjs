@@ -1,36 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.font-size-40px {
-  font-size: 40px;
-}
-.Header {
-  margin-left: calc(1450px - 1310px);
-  height: 48px;
-  width: 1310px;
-}
-
-.default-p {
-  color: #777e90;
-  font-weight: 400;
-}
-.first-on-page {
-  padding-top: 74px;
-}
-a,
-input {
-  outline: none;
-}
-.H-a {
-  border-bottom: 0 solid #a259ff;
-  font-size: 22px;
-  font-weight: 600;
-  color: white;
-}
-.H-a:hover {
-  transform: translateY(0%);
-  transition: all 0.3s;
-  transform: translateY(-5px);
-  border-bottom: 3px solid #a259ff;
-}
