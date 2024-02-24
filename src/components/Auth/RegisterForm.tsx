@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import { TextInput } from "common/ui/inputs/TextInput";
 import { AuthFormButton } from "common/ui/Buttons/AuthFormButton";
-// import { getDefaults } from "utils/zod";
+import { getDefaults } from "utils/zod";
 
 const registerSchema = z.object({
   fullName: z
@@ -29,12 +29,19 @@ export function RegisterForm() {
     reset,
     formState: { errors, isLoading },
   } = useForm<Form>({
-    // defaultValues: getDefaults(registerSchema),
+    defaultValues: getDefaults(registerSchema),
     resolver: zodResolver(registerSchema),
   });
 
   function onSubmit(data: Form) {
     console.log(data);
+    fetch("/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application.json",
+      },
+      body: JSON.stringify(data),
+    });
     reset();
   }
 
