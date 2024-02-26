@@ -27,6 +27,14 @@ export function LoginForm() {
 
   function onSubmit(data: Form) {
     console.log({ data });
+    fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application.json",
+      },
+      body: JSON.stringify(data),
+    });
+
     reset();
   }
 
