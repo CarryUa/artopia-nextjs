@@ -1,19 +1,17 @@
 import { mongoConect } from "lib/mongo-conect";
 import User from "models/User";
+import { UserType } from "models/User";
 import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const user = await req.json();
+  const cretentials = await req.json();
   await mongoConect();
-  const newUser = await User.find({
-    email: user.email,
+  const user = await User.findOne<UserType>({
+    email: cretentials.email,
   });
-  if (newUser[0] != undefined) {
-    console.log(newUser);
-    redirect("/");
-  } else {
-    console.log("ERROR");
-    redirect("/login");
-  }
+  if (!user) return NextResponse.json({ error: "User is not found" });
+  if (user.password != cretentials.password)
+    return NextResponse.json({ error: "Password is wrong" });
+  return NextResponse.json(user);
 }

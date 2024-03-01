@@ -6,7 +6,8 @@ import z from "zod";
 import { TextInput } from "common/ui/inputs/TextInput";
 import { AuthFormButton } from "common/ui/Buttons/AuthFormButton";
 import { getDefaults } from "utils/zod";
-
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 const loginSchema = z.object({
   email: z.string().email("Email is required").default(""),
   password: z.string().min(1, "Password is required").default(""),
@@ -15,6 +16,8 @@ const loginSchema = z.object({
 type Form = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
+  const [error, setError] = useState("");
+  const router = useRouter();
   const {
     handleSubmit,
     register,
@@ -25,17 +28,20 @@ export function LoginForm() {
     resolver: zodResolver(loginSchema),
   });
 
-  function onSubmit(data: Form) {
-    console.log({ data });
-    fetch("/api/login", {
+  async function onSubmit(data: Form) {
+    setError("");
+    const res = await fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application.json",
       },
       body: JSON.stringify(data),
-    });
-
-    reset();
+    }).then((res) => res.json());
+    if (res.error) setError(res.error);
+    if (!res.error) {
+      reset();
+      router.push("/");
+    }
   }
 
   return (
@@ -62,6 +68,11 @@ export function LoginForm() {
               helperText={errors.password?.message ?? ""}
             />
           </div>
+          {error && (
+            <div className="text-red-500 bg-red-100 p-2 rounded-xlв">
+              {error}
+            </div>
+          )}
           <AuthFormButton>Login</AuthFormButton>
         </div>
       </form>
