@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Link from "next/link";
 
-export default function Navigation() {
+export default function NavBar() {
   const pathname = usePathname();
 
   return (
