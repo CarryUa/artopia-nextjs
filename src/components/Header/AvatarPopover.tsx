@@ -5,12 +5,15 @@ import { Fragment } from "react";
 import NoAvatar from "./static/noavatar.png";
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
+import { useLoginContext } from "components/context/login";
+import clsx from "clsx";
 
 type AvatarPopoverProps = {
   image: string;
 };
 
 export const AvatarPopover = ({ image }: AvatarPopoverProps) => {
+  const { state, changeState } = useLoginContext();
   return (
     <Popover as={"div"} className="relative leading-none">
       {({ open }) => (
@@ -45,8 +48,13 @@ export const AvatarPopover = ({ image }: AvatarPopoverProps) => {
                   >
                     Profile
                   </Link>
-                  <Link href={"/profile"}>Settings</Link>
-                  <LogoutButton className="bg-_violet-500 hover:bg-_violet-400"></LogoutButton>
+                  <Link href={"/settings"}>Settings</Link>
+                  <LogoutButton
+                    className={clsx(
+                      "bg-_violet-500 hover:bg-_violet-400",
+                      !state && "hidden"
+                    )}
+                  ></LogoutButton>
                 </div>
               </div>
             </Popover.Panel>

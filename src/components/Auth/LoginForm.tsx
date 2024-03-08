@@ -8,6 +8,7 @@ import { AuthFormButton } from "common/ui/Buttons/AuthFormButton";
 import { getDefaults } from "utils/zod";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useLoginContext } from "components/context/login";
 const loginSchema = z.object({
   email: z.string().email("Email is required").default(""),
   password: z.string().min(1, "Password is required").default(""),
@@ -18,6 +19,7 @@ type Form = z.infer<typeof loginSchema>;
 export function LoginForm() {
   const [error, setError] = useState("");
   const router = useRouter();
+  const { state, changeState } = useLoginContext();
   const {
     handleSubmit,
     register,
@@ -39,6 +41,9 @@ export function LoginForm() {
     }).then((res) => res.json());
     if (res.error) setError(res.error);
     if (!res.error) {
+      changeState(true);
+      console.log(state);
+
       reset();
       router.push("/");
     }

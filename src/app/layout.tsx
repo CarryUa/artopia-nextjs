@@ -3,6 +3,7 @@ import { Barlow } from "next/font/google";
 import Footer from "components/Footer/Footer";
 import Header from "components/Header/Header";
 import "./globals.css";
+import { AuthProvider } from "components/context/login";
 
 const barlow = Barlow({
   subsets: ["latin"],
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${barlow.className} bg-[#121212] text-white`}>
-        <Header />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
