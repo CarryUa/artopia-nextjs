@@ -4,6 +4,7 @@ import { Fragment } from "react";
 
 import NoAvatar from "./static/noavatar.png";
 import Link from "next/link";
+import LogoutButton from "./LogoutButton";
 
 type AvatarPopoverProps = {
   image: string;
@@ -37,9 +38,15 @@ export const AvatarPopover = ({ image }: AvatarPopoverProps) => {
           >
             <Popover.Panel className="absolute right-0 z-10 mt-3 max-w-sm transform px-4 sm:px-0 lg:max-w-xl">
               <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5">
-                <div className="relative bg-lime-200 p-7 text-black-500 flex flex-col">
-                  <Link href={"/profile"}>Profile</Link>
+                <div className=" bg-_grey-500 p-7 text-black-500 flex flex-col gap-3">
+                  <Link
+                    className="py-3 px-1 transition-all hover:bg-_violet-400"
+                    href={"/profile"}
+                  >
+                    Profile
+                  </Link>
                   <Link href={"/profile"}>Settings</Link>
+                  <LogoutButton className="bg-_violet-500 hover:bg-_violet-400"></LogoutButton>
                 </div>
               </div>
             </Popover.Panel>

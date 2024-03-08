@@ -7,7 +7,7 @@ import HeroDecorWhite from "./static/HeroDecorWhite.png";
 import Lines from "./static/HecoDecorLines.svg";
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-[74px]">
+    <section className="relative overflow-hidden py-[90px]">
       <div className="z-0 absolute bg-standart_violet-300 w-1/5 h-full top-0"></div>
       {/* left purpule background */}
       <Image
@@ -17,6 +17,7 @@ export default function Hero() {
         alt="Decor"
         className=" absolute bottom-0 left-0"
       ></Image>
+      {/* right pink background */}
       <Image
         width={500}
         height={500}
@@ -24,6 +25,7 @@ export default function Hero() {
         alt="Decor"
         className=" absolute top-[-150px] right-[-200px]"
       ></Image>
+      {/* left white background */}
       <Image
         src={HeroDecorWhite}
         width={500}
@@ -31,6 +33,7 @@ export default function Hero() {
         alt="Decor"
         className="z-10 absolute left-[-150px] top-[30%]"
       />
+      {/* left lines decoraton */}
       <Image
         src={Lines}
         width={115}

@@ -1,6 +1,6 @@
 export default function MainPageText() {
   return (
-    <div className="flex z-10 flex-col justify-between w-[580px]">
+    <div className="flex z-10 flex-col justify-between max-w-[580px]">
       <h2 className="text-white text-[110px] font-semibold text-8xl ">
         Buy and Sell Digital Arts
       </h2>

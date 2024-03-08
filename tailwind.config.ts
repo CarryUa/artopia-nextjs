@@ -14,7 +14,7 @@ const config: Config = {
           800: "#32026F",
           900: "#200049",
         },
-        standart_grey: {
+        _grey: {
           500: "#3B3B3B",
         },
       },
