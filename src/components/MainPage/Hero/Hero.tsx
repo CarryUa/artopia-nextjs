@@ -1,6 +1,6 @@
 import Image from "next/image";
 import MainPageImages from "./MainPageImages";
-import MainPageText from "./MainPageText";
+import MainPageText from "./Hero";
 import HeroDecorPurpule from "./static/HeroDecorPurpule.svg";
 import HeroDecorPink from "./static/HeroDecorPink.svg";
 import HeroDecorWhite from "./static/HeroDecorWhite.png";

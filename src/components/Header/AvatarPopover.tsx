@@ -24,7 +24,7 @@ export const AvatarPopover = ({ image }: AvatarPopoverProps) => {
             >
               <Image
                 src={image ? image : NoAvatar}
-                alt={"No Avatar"}
+                alt={"Avatar"}
                 fill
                 className={"object-cover"}
               />
