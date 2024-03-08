@@ -8,7 +8,7 @@ export default function MainPageText() {
         The world’s largest online marketplace of online digital art
       </p>
       <p className="text-white text-[20px] font-bold">Explore</p>
-      <div className="flex gap-12">
+      <div className="flex justify-between gap-12">
         <div className="flex flex-col">
           <p className="text-white text-[32px] font-semibold">999,000</p>
           <p className="text-white">Digital art file</p>
