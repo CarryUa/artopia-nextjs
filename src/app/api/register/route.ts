@@ -7,4 +7,3 @@ export async function POST(req: NextRequest) {
   const newUser = await User.create(user);
   return NextResponse.json(newUser);
 }
-export async function GET(req: NextRequest) {}
