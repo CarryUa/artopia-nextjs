@@ -9,9 +9,9 @@ export default function Home() {
     <>
       {/* <Hero />
       <Brands />
-      <TreandingSales />
-      <TopCreators /> */}
-      <Categories />
+      <TreandingSales /> */}
+      <TopCreators />
+      {/* <Categories /> */}
     </>
   );
 }
