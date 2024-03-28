@@ -3,7 +3,24 @@
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Link from "next/link";
-
+const links = [
+  {
+    url: "/discover",
+    title: "Discover",
+  },
+  {
+    url: "/discover",
+    title: "Discover",
+  },
+  {
+    url: "/discover",
+    title: "Discover",
+  },
+  {
+    url: "/discover",
+    title: "Discover",
+  },
+];
 export default function NavBar() {
   const pathname = usePathname();
 

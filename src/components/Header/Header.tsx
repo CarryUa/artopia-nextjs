@@ -7,7 +7,7 @@ import NavBar from "./NavBar";
 import SignIn from "./SignInButton";
 import { IoMdSearch } from "react-icons/io";
 import { MdOutlineShoppingCart } from "react-icons/md";
-
+import { useLoginContext } from "components/context/login";
 import { useState } from "react";
 import { Cart } from "components/Header/Cart";
 import { AvatarPopover } from "./AvatarPopover";
@@ -17,6 +17,7 @@ export default function Header() {
   const pathname = usePathname();
   const [avatar, setAvatar] = useState("");
   let [isOpen, setIsOpen] = useState(false);
+  const { state, changeState } = useLoginContext();
 
   if (
     pathname.includes("/login") ||

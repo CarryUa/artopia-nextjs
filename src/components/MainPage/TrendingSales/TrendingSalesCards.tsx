@@ -15,13 +15,7 @@ export default function TreandingSalesCards({
 }: TreandingSalesCardProps) {
   return (
     <div className="w-[320px] h-[400px] relative rounded-3xl overflow-hidden">
-      <Image
-        width={320}
-        height={400}
-        className="absolute w-full h-full"
-        src={image}
-        alt="NFT"
-      ></Image>
+      <Image fill src={image} alt="NFT"></Image>
       <div className="absolute bottom-0 w-full h-1/4 bg-opacity-95 flex flex-col gap-2 bg-[#343c3c] p-2">
         <h3 className="text-xl font-bold">{name}</h3>
         <div className="flex gap-3">

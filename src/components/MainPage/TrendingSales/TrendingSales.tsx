@@ -6,7 +6,7 @@ export default function TreandingSales() {
   return (
     <section>
       <Container>
-        <div>
+        <div className="pb-12">
           <h3 className="text-white text-5xl font-semibold">Trending Sales</h3>
           <p className="text-[#777e90] text-xl">
             Checkout our weekly updated trending sales

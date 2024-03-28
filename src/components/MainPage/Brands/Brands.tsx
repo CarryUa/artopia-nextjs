@@ -13,6 +13,7 @@ export default function Brands() {
           <Image src={BiowareLogo} alt="Bioware Logo"></Image>
           <Image src={CryptonewsLogo} alt="Cryptonews Logo"></Image>
           <Image src={EnsembleLogo} alt="Ensemble Studios Logo"></Image>
+          <Image src={EnsembleLogo} alt="Ensemble Studios Logo 2"></Image>
         </div>
       </Container>
     </section>
