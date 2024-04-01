@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Cart } from "components/Header/Cart";
 import { AvatarPopover } from "./AvatarPopover";
 import { NotificationPopover } from "./NotificationPopover";
+import clsx from "clsx";
 
 export default function Header() {
   const pathname = usePathname();
@@ -35,8 +36,10 @@ export default function Header() {
               Artopia
             </Link>
             <NavBar />
-            {/* <SignIn /> */}
-            <div className={"flex items-center gap-8"}>
+            <SignIn className={clsx(state && "hidden")} />
+            <div
+              className={clsx("flex items-center gap-8", !state && "hidden")}
+            >
               <IoMdSearch
                 className={"w-9 h-9 hover:text-_violet-500 transition-colors"}
               />

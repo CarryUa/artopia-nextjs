@@ -7,11 +7,11 @@ import TreandingSales from "components/MainPage/TrendingSales/TrendingSales";
 export default function Home() {
   return (
     <>
-      {/* <Hero />
-      <Brands />
-      <TreandingSales /> */}
+      <Hero />
+      {/* <Brands />
+      <TreandingSales />
       <TopCreators />
-      {/* <Categories /> */}
+      <Categories /> */}
     </>
   );
 }

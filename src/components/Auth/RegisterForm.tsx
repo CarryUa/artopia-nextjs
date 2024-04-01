@@ -6,7 +6,7 @@ import z from "zod";
 import { TextInput } from "common/ui/inputs/TextInput";
 import { AuthFormButton } from "common/ui/Buttons/AuthFormButton";
 import { getDefaults } from "utils/zod";
-
+import avatar from "/public/PopularAvatar.png";
 const registerSchema = z.object({
   fullName: z
     .string()

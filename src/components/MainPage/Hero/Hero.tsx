@@ -5,10 +5,11 @@ import HeroDecorPurpule from "./static/HeroDecorPurpule.svg";
 import HeroDecorPink from "./static/HeroDecorPink.svg";
 import HeroDecorWhite from "./static/HeroDecorWhite.png";
 import Lines from "./static/HecoDecorLines.svg";
+import Container from "common/Container";
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-[90px]">
-      <div className="z-0 absolute bg-standart_violet-300 w-1/5 h-full top-0"></div>
+    <section className="relative overflow-hidden py-[80px] h-screen">
+      <div className=" absolute opacity-50 bg-_violet-300 w-1/5 h-full top-0"></div>
       {/* left purpule background */}
       <Image
         width={700}
@@ -41,12 +42,12 @@ export default function Hero() {
         alt="Decor Lines"
         className="z-10 absolute left-0 bottom-0"
       />
-      <div className="container relative z-10 mx-auto px-4 max-w-screen-xl">
-        <div className="flex gap-10">
+      <Container className="relative z-10 mx-auto px-4 max-w-screen-xl">
+        <div className="flex justify-center  flex-col md:flex-row gap-12">
           <MainPageImages />
           <MainPageText />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
