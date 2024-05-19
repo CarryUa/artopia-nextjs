@@ -2,23 +2,25 @@
 
 import { usePathname } from "next/navigation";
 import Container from "common/Container";
+import Image from "next/image";
 import Link from "next/link";
 import NavBar from "./NavBar";
 import SignIn from "./SignInButton";
+import avatar from "/public/PopularAvatar.png";
 import { IoMdSearch } from "react-icons/io";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { useLoginContext } from "components/context/login";
+import { useAuth } from "components/context/login";
 import { useState } from "react";
 import { Cart } from "components/Header/Cart";
 import { AvatarPopover } from "./AvatarPopover";
 import { NotificationPopover } from "./NotificationPopover";
 import clsx from "clsx";
-
+import { BurgerMenu } from "./BurgerMenu";
+import bars from "./static/burgerBars.svg";
 export default function Header() {
   const pathname = usePathname();
-  const [avatar, setAvatar] = useState("");
   let [isOpen, setIsOpen] = useState(false);
-  const { state, changeState } = useLoginContext();
+  const { isLoggedIn, changeIsLoggedIn } = useAuth();
 
   if (
     pathname.includes("/login") ||
@@ -36,35 +38,20 @@ export default function Header() {
               Artopia
             </Link>
             <NavBar />
-            <SignIn className={clsx(state && "hidden")} />
-            <div
-              className={clsx("flex items-center gap-8", !state && "hidden")}
-            >
-              <IoMdSearch
-                className={"w-9 h-9 hover:text-_violet-500 transition-colors"}
+            {!isLoggedIn ? <SignIn /> : <AvatarPopover image={avatar} />}
+
+            <button className="md:hidden" onClick={() => setIsOpen(true)}>
+              <Image
+                className="max-w-10 max-h-10"
+                src={bars}
+                alt="Burger Bars"
               />
-              <button onClick={() => setIsOpen(true)}>
-                <MdOutlineShoppingCart
-                  className={"w-9 h-9 hover:text-_violet-500 transition-colors"}
-                />
-              </button>
-              <AvatarPopover image={avatar} />
-              <NotificationPopover
-                notifications={[
-                  "Notification 1",
-                  "Notification 2",
-                  "Notification 3",
-                ]}
-              />
-            </div>
+            </button>
           </div>
         </Container>
       </header>
-      <Cart
-        artsToBuy={[]}
-        isOpen={isOpen}
-        closeModal={() => setIsOpen(false)}
-      />
+      <BurgerMenu open={isOpen} onClose={() => setIsOpen(false)} />
+      <Cart />
     </>
   );
 }

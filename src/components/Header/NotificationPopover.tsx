@@ -13,7 +13,7 @@ export const NotificationPopover = ({
     <Popover as={"div"} className="relative leading-none">
       {({ open }) => (
         <>
-          <Popover.Button className={""}>
+          <Popover.Button className={"flex gap-2"}>
             <span
               className={
                 "relative before:absolute before:top-1 before:right-2 before:w-2 before:h-2 before:rounded-full before:bg-red-500"
@@ -23,6 +23,7 @@ export const NotificationPopover = ({
                 className={"w-9 h-9 hover:text-_violet-500 transition-colors"}
               />
             </span>
+            <p className="text-2xl font-semibold">Notification</p>
           </Popover.Button>
           <Transition
             as={Fragment}
@@ -33,9 +34,9 @@ export const NotificationPopover = ({
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <Popover.Panel className="absolute right-0 z-10 mt-3 max-w-sm transform px-4 sm:px-0 lg:max-w-xl">
+            <Popover.Panel className="absolute right-[15px] sm:right-[65px] z-10 mt-3 max-w-sm transform px-4 sm:px-0 lg:max-w-xl">
               <div className="overflow-hidden rounded-lg">
-                <ul className="bg-white p-2 min-w-40 text-black-500 flex flex-col">
+                <ul className="bg-_grey-500 p-2 min-w-40 text-black-500 flex flex-col">
                   {notifications.length ? (
                     notifications.map((notification) => {
                       return (

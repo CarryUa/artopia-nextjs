@@ -1,21 +1,24 @@
 "use client";
 import { useContext, useState, createContext, ReactNode } from "react";
-
-const LoginContext = createContext({
-  state: false,
-  changeState: (value: boolean) => {},
+type AuthContextType = {
+  isLoggedIn: boolean;
+  changeIsLoggedIn: () => void;
+};
+const AuthContext = createContext<AuthContextType>({
+  isLoggedIn: false,
+  changeIsLoggedIn: () => {},
 });
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [state, setLoginState] = useState(false);
-  function changeState(newState: boolean) {
-    setLoginState(newState);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  function changeIsLoggedIn() {
+    setIsLoggedIn((prev) => !prev);
   }
   return (
-    <LoginContext.Provider value={{ state, changeState }}>
+    <AuthContext.Provider value={{ isLoggedIn, changeIsLoggedIn }}>
       {children}
-    </LoginContext.Provider>
+    </AuthContext.Provider>
   );
 }
-export function useLoginContext() {
-  return useContext(LoginContext);
+export function useAuth() {
+  return useContext(AuthContext);
 }

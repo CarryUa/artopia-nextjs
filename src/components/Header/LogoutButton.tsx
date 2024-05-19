@@ -1,15 +1,15 @@
 import clsx from "clsx";
 
-import { useLoginContext } from "components/context/login";
+import { useAuth } from "components/context/login";
 import { useRouter } from "next/navigation";
 type LogoutButtonProps = {
   className?: string;
 };
 export default function LogoutButton({ className }: LogoutButtonProps) {
-  const { changeState } = useLoginContext();
+  const { changeIsLoggedIn } = useAuth();
   const router = useRouter();
   function onClick() {
-    changeState(false);
+    changeIsLoggedIn();
     router.push("/");
   }
   return (
@@ -17,7 +17,7 @@ export default function LogoutButton({ className }: LogoutButtonProps) {
       type="button"
       onClick={onClick}
       className={clsx(
-        "px-20 py-5 text-white whitespace-nowrap bg-_violet-500 hover:bg-_violet-600 transition-colors",
+        "sm:px-20 px-7 py-5 text-white whitespace-nowrap bg-_violet-500 hover:bg-_violet-600 transition-colors",
         className
       )}
     >
